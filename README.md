@@ -35,7 +35,7 @@ This project is built on a modern data stack, separating responsibilities across
 
 ### Architecture Diagram
 
-![Architecture Diagram](diagrama.svg)
+![Architecture Diagram](diagram.png)
 
 ### Data Flow
 
