@@ -172,8 +172,8 @@ const DashboardPage: React.FC = () => {
         ],
     };
     return (
-        <div className="bg-gray-100 min-h-screen font-sans">
-            <main className="container mx-auto p-4 md:p-8">
+        <div className="bg-gray-100 font-sans">
+            {/*<main className="container mx-auto p-4 md:p-8">*/}
                 <h1 className="text-2xl md:text-3xl font-bold text-dark-brown mb-8">Dashboard Storia.ro</h1>
 
                 <KpiCards data={kpis}/>
@@ -238,7 +238,7 @@ const DashboardPage: React.FC = () => {
                 </div>
 
 
-            </main>
+            {/*</main>*/}
         </div>
     );
 }
