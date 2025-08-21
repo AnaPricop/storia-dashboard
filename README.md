@@ -1,78 +1,149 @@
-# Real Estate Market Analyzer - Data Engineering Portfolio Project
+# 🏠 Real Estate Market Analyzer
 
-This project demonstrates a complete, end-to-end ELT (Extract, Load, Transform) data pipeline. It covers the entire data lifecycle, from scraping data from a public website to orchestration, cloud storage, transformation, and finally, visualization in an interactive web dashboard.
+### A full-stack, end-to-end data engineering portfolio project demonstrating the complete data lifecycle: from automated web scraping and orchestration to cloud data warehousing, transformation, and interactive visualization.
 
-**Live Demo:** [https://storia-dashboard.vercel.app/](https://storia-dashboard.vercel.app/) 
-
----
-
-## Project Overview
-
-The project automatically scrapes daily real estate listings for Bucharest from the [Storia.ro](https://www.storia.ro/) portal, processes them, and presents the insights in an interactive dashboard. Users can explore aggregated data through various charts and filter the detailed list of properties based on multiple criteria.
-
-![Dashboard Screenshot](ss3.PNG) 
----
-
-## System Architecture
-
-The project is built on a modern data stack, clearly separating the responsibilities of each component within an ELT workflow.
-
-![Architecture Diagram](diagrama.svg) 
-
-**The data flows as follows:**
-
-1.  **Orchestration (Airflow):** A DAG (Directed Acyclic Graph) in Apache Airflow, running inside Docker, is scheduled to execute daily.
-2.  **Extraction (Python):** The Airflow task runs a Python script that scrapes new real estate listings from `storia.ro` using `requests` and `BeautifulSoup`.
-3.  **Cloud Ingestion (Azure):** The Python script uploads the raw data as daily CSV files to an **Azure Blob Storage** container, which acts as a staging area/Data Lake.
-4.  **Data Warehouse Loading (Snowflake):** The raw data from the CSV files is loaded (using the `COPY INTO` command) into a raw data table (`RAW_STORIA_LISTINGS`) in **Snowflake**.
-5.  **Transformation (dbt):** **dbt (data build tool)** is used to transform the raw data. SQL models clean the data (extracting numbers from text, standardizing categories), cast data types, and add calculated columns (e.g., price/sqm), materializing the final, clean results into a new table (`dim_listings`).
-6.  **Backend API (Node.js):** A RESTful API built with **Node.js** and **Express** connects to Snowflake, queries the clean and aggregated data, and exposes it through various endpoints. A **caching layer** is implemented to optimize performance and reduce query costs.
-7.  **Frontend Dashboard (React):** A single-page application built with **React** and **TypeScript** consumes the data from the Node.js API and presents it to the user through interactive components (KPI cards, charts, a filterable table), styled with **Tailwind CSS**.
+**✨ Live Demo:** **[storia-dashboard.vercel.app](https://storia-dashboard.vercel.app/)**
 
 ---
 
-## Technology Stack
+## Key Features
 
-**Orchestration & Ingestion**
-*   **Apache Airflow:** For scheduling and orchestrating the entire pipeline.
-*   **Docker:** To run the Airflow environment in a containerized, reproducible way.
-*   **Python:** The core language for the data scraping scripts.
-    *   *Key Libraries: `requests`, `beautifulsoup4`, `azure-storage-blob`.*
+*   **Automated Daily Ingestion:** An Airflow DAG scrapes new real estate listings from Storia.ro every day.
+*   **Cloud-Native Architecture:** Utilizes Azure for raw data storage and Snowflake for high-performance analytics.
+*   **Robust Data Transformation:** dbt models clean, transform, and test the data, ensuring quality and consistency.
+*   **Interactive Dashboard:** A modern React frontend with Tailwind CSS allows users to filter, sort, and visualize data through dynamic charts and tables.
+*   **Performance Optimized API:** A Node.js backend serves data from Snowflake with an in-memory caching layer to ensure a fast user experience and minimize costs.
 
-**Storage & Data Warehouse**
-*   **Microsoft Azure Blob Storage:** For raw data storage (Data Lake / Staging Area).
-*   **Snowflake:** A modern Cloud Data Warehouse for storing structured data and performing fast analytical queries.
-
-**Transformation**
-*   **dbt (data build tool):** To model and transform data directly within Snowflake using SQL.
-
-**API & Dashboard**
-*   **Backend:** **Node.js** with **Express.js**.
-*   **Frontend:** **React** with **TypeScript** and **Vite**.
-*   **Data Visualization:** **Chart.js** (`react-chartjs-2`).
-*   **Styling:** **Tailwind CSS**.
+![Dashboard Screenshot](ss3.PNG)
 
 ---
 
-## Technical Challenges & Solutions
+## ⚙️ Technology Stack & Architecture
 
-During development, several interesting challenges were addressed:
+This project is built on a modern data stack, separating responsibilities across an ELT (Extract, Load, Transform) workflow.
 
-*   **Anti-Scraping Measures:** An initial attempt on a different real estate portal failed due to advanced anti-bot protections (CAPTCHA). The solution was to **pivot** to a more accessible data source (`storia.ro`) and implement **delays between requests** to mimic human behavior and avoid IP blocking.
-*   **Secrets Management in Airflow:** Passing the Azure Connection String securely to a `BashOperator` proved problematic due to environment-specific issues. The final solution was to use a `Generic` Airflow connection and inject the secret stored in the `password` field directly into the `bash` command, bypassing the compatibility issues of specialized operators.
-*   **Performance Optimization:** Repeatedly querying Snowflake from the frontend for every filter change was slow. An **in-memory caching layer** was implemented in the Node.js API using `node-cache`, drastically reducing response times for frequent requests from several seconds to milliseconds and minimizing warehouse costs.
+### Tech Badges
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
+![Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=for-the-badge&logo=microsoft%20azure&logoColor=white)
+![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+
+### Architecture Diagram
+
+![Architecture Diagram](diagrama.svg)
+
+### Data Flow
+
+1.  **Orchestration (Airflow):** A Dockerized Apache Airflow DAG runs on a daily schedule.
+2.  **Extraction (Python):** The DAG executes a Python script that scrapes new listings from `storia.ro` using `requests` and `BeautifulSoup`.
+3.  **Cloud Ingestion (Azure):** Raw data is uploaded as daily CSV files to an **Azure Blob Storage** container, acting as a data lake/staging area.
+4.  **Data Warehouse Loading (Snowflake):** The raw CSVs are loaded into a staging table in **Snowflake**.
+5.  **Transformation (dbt):** dbt SQL models transform the raw data—cleaning fields, casting data types, and adding business logic (e.g., price per square meter). The final, clean data is materialized into an analytics-ready table (`dim_listings`).
+6.  **Backend API (Node.js):** A RESTful API built with **Express.js** queries the clean data from Snowflake and exposes it through various endpoints.
+7.  **Frontend Dashboard (React):** A single-page application built with **React**, **TypeScript**, and **Vite** consumes the API data and presents it through interactive KPI cards, charts, and a filterable table, styled with **Tailwind CSS**.
 
 ---
 
-## How to Run Locally
+## 🚀 Key Learnings & Technical Challenges
 
-The project is divided into several components. To run the entire system locally, follow the steps below.
+This project provided deep insights into the practical challenges of building a data pipeline.
+
+*   **Anti-Scraping Measures:** An initial attempt on a different portal failed due to advanced anti-bot protections. The solution was to **pivot** to a more accessible source (`storia.ro`) and implement **request delays** to ensure reliable extraction.
+*   **Secrets Management in Airflow:** Passing the Azure Connection String to a `BashOperator` was challenging. The final, robust solution involved using a `Generic` Airflow connection and injecting the secret as an environment variable directly into the `bash` command, ensuring both security and functionality.
+*   **Performance Optimization:** Initial frontend load times were slow due to direct queries to Snowflake on every filter change. An **in-memory caching layer** (`node-cache`) was implemented in the Node.js API, reducing response times for repeated requests from seconds to milliseconds and minimizing Snowflake warehouse costs.
+
+---
+
+## Local Development
+
+To run the entire system locally, follow the steps below.
 
 ### Prerequisites
 *   Docker Desktop
-*   Node.js (recommended via `nvm`)
-*   Python
+*   Node.js (via `nvm` is recommended)
+*   Python & a virtual environment tool
 *   Active accounts on Microsoft Azure and Snowflake
+
+# 🏠 Real Estate Market Analyzer
+
+### A full-stack, end-to-end data engineering portfolio project demonstrating the complete data lifecycle: from automated web scraping and orchestration to cloud data warehousing, transformation, and interactive visualization.
+
+**✨ Live Demo:** **[storia-dashboard.vercel.app](https://storia-dashboard.vercel.app/)**
+
+---
+
+## Key Features
+
+*   **Automated Daily Ingestion:** An Airflow DAG scrapes new real estate listings from Storia.ro every day.
+*   **Cloud-Native Architecture:** Utilizes Azure for raw data storage and Snowflake for high-performance analytics.
+*   **Robust Data Transformation:** dbt models clean, transform, and test the data, ensuring quality and consistency.
+*   **Interactive Dashboard:** A modern React frontend with Tailwind CSS allows users to filter, sort, and visualize data through dynamic charts and tables.
+*   **Performance Optimized API:** A Node.js backend serves data from Snowflake with an in-memory caching layer to ensure a fast user experience and minimize costs.
+
+![Dashboard Screenshot](ss3.PNG)
+
+---
+
+## ⚙️ Technology Stack & Architecture
+
+This project is built on a modern data stack, separating responsibilities across an ELT (Extract, Load, Transform) workflow.
+
+### Tech Badges
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white)
+![Azure](https://img.shields.io/badge/Microsoft%20Azure-0078D4?style=for-the-badge&logo=microsoft%20azure&logoColor=white)
+![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)
+![dbt](https://img.shields.io/badge/dbt-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+
+### Architecture Diagram
+
+![Architecture Diagram](diagrama.svg)
+
+### Data Flow
+
+1.  **Orchestration (Airflow):** A Dockerized Apache Airflow DAG runs on a daily schedule.
+2.  **Extraction (Python):** The DAG executes a Python script that scrapes new listings from `storia.ro` using `requests` and `BeautifulSoup`.
+3.  **Cloud Ingestion (Azure):** Raw data is uploaded as daily CSV files to an **Azure Blob Storage** container, acting as a data lake/staging area.
+4.  **Data Warehouse Loading (Snowflake):** The raw CSVs are loaded into a staging table in **Snowflake**.
+5.  **Transformation (dbt):** dbt SQL models transform the raw data—cleaning fields, casting data types, and adding business logic (e.g., price per square meter). The final, clean data is materialized into an analytics-ready table (`dim_listings`).
+6.  **Backend API (Node.js):** A RESTful API built with **Express.js** queries the clean data from Snowflake and exposes it through various endpoints.
+7.  **Frontend Dashboard (React):** A single-page application built with **React**, **TypeScript**, and **Vite** consumes the API data and presents it through interactive KPI cards, charts, and a filterable table, styled with **Tailwind CSS**.
+
+---
+
+## 🚀 Key Learnings & Technical Challenges
+
+This project provided deep insights into the practical challenges of building a data pipeline.
+
+*   **Anti-Scraping Measures:** An initial attempt on a different portal failed due to advanced anti-bot protections. The solution was to **pivot** to a more accessible source (`storia.ro`) and implement **request delays** to ensure reliable extraction.
+*   **Secrets Management in Airflow:** Passing the Azure Connection String to a `BashOperator` was challenging. The final, robust solution involved using a `Generic` Airflow connection and injecting the secret as an environment variable directly into the `bash` command, ensuring both security and functionality.
+*   **Performance Optimization:** Initial frontend load times were slow due to direct queries to Snowflake on every filter change. An **in-memory caching layer** (`node-cache`) was implemented in the Node.js API, reducing response times for repeated requests from seconds to milliseconds and minimizing Snowflake warehouse costs.
+
+---
+
+## Local Development
+
+To run the entire system locally, follow the steps below.
+
+### Prerequisites
+*   Docker Desktop
+*   Node.js (via `nvm` is recommended)
+*   Python & a virtual environment tool
+*   Active accounts on Microsoft Azure and Snowflake
+
 
 ### 1. Backend API
 ```bash
@@ -103,4 +174,3 @@ docker-compose up
 cd imobiliare_transforms
 # Make sure your ~/.dbt/profiles.yml file is configured correctly
 dbt run
-```
