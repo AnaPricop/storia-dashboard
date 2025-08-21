@@ -10,3 +10,4 @@ SELECT
 FROM stg_listings
 WHERE
     pret > 0 AND suprafata_mp > 0
+    AND pret >= 10000
