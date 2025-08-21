@@ -1,0 +1,29 @@
+.kpi-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.kpi-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    flex: 1; /* Face ca toate cardurile să aibă aceeași lățime */
+    min-width: 200px;
+}
+
+.kpi-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.kpi-number {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}

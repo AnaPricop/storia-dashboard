@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: storia_data
+    database: IMOBILIARE_RAW
+    schema: storia_data
+    tables:
+      - name: raw_storia_listings

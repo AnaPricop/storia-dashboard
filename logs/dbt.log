@@ -1,0 +1,295 @@
+[0m13:55:07.098066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A6E1CBB60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A6C278410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A705C4050>]}
+
+
+============================== 13:55:07.106274 | 3a9c4bf9-a0c2-4dab-957d-25fad79a68a4 ==============================
+[0m13:55:07.106274 [info ] [MainThread]: Running with dbt=1.10.9
+[0m13:55:07.106867 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\prico\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'None', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'logs', 'introspect': 'True', 'invocation_command': 'dbt init imobiliare_transforms', 'fail_fast': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'use_experimental_parser': 'False'}
+[0m13:55:07.124788 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\prico\.dbt
+[0m13:55:07.126475 [debug] [MainThread]: Starter project path: C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m13:55:07.135445 [info ] [MainThread]: 
+Your new dbt project "imobiliare_transforms" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:55:07.135797 [info ] [MainThread]: Setting up your profile.
+[0m14:00:08.230655 [error] [MainThread]: Encountered an error:
+
+[0m14:00:08.234788 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 113, in generate_target_from_input
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m14:00:08.235938 [debug] [MainThread]: Command `dbt init` failed at 14:00:08.235827 after 301.23 seconds
+[0m14:00:08.236257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A715C9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A715D1490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019A715FC380>]}
+[0m14:00:08.236611 [debug] [MainThread]: Flushing usage events
+[0m14:00:08.802384 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:00:12.558547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BBBC78FA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BBBA84C190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BBBDBA0190>]}
+
+
+============================== 14:00:12.561820 | dc284a18-a4bc-4b28-847c-ce68e5520141 ==============================
+[0m14:00:12.561820 [info ] [MainThread]: Running with dbt=1.10.9
+[0m14:00:12.562391 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'None', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\prico\\.dbt', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'logs', 'introspect': 'True', 'no_print': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init imobiliare_transforms', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'target_path': 'None'}
+[0m14:00:12.576736 [info ] [MainThread]: A project called imobiliare_transforms already exists here.
+[0m14:00:12.577467 [debug] [MainThread]: Command `dbt init` succeeded at 14:00:12.577366 after 0.12 seconds
+[0m14:00:12.577757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BBBEBAE780>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BBBEC26210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BBBD9EF570>]}
+[0m14:00:12.578049 [debug] [MainThread]: Flushing usage events
+[0m14:00:13.105221 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:00:39.734897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0965ABA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E094668190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E0979A4190>]}
+
+
+============================== 14:00:39.738264 | 05e63666-dec9-4f92-98ed-d347f642a1ea ==============================
+[0m14:00:39.738264 [info ] [MainThread]: Running with dbt=1.10.9
+[0m14:00:39.738837 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\prico\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'None', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'no_print': 'None', 'invocation_command': 'dbt init imobiliare_transforms', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'target_path': 'None'}
+[0m14:00:39.753244 [debug] [MainThread]: Starter project path: C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m14:00:39.762818 [info ] [MainThread]: 
+Your new dbt project "imobiliare_transforms" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:00:39.763166 [info ] [MainThread]: Setting up your profile.
+[0m14:00:50.076033 [error] [MainThread]: Encountered an error:
+
+[0m14:00:50.078942 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 113, in generate_target_from_input
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m14:00:50.080121 [debug] [MainThread]: Command `dbt init` failed at 14:00:50.080012 after 10.44 seconds
+[0m14:00:50.080428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E099887CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E098FA2690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E099948490>]}
+[0m14:00:50.080768 [debug] [MainThread]: Flushing usage events
+[0m14:00:50.596502 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:00:57.775125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024DA7AB7A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024DA5B78190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024DA8EB4190>]}
+
+
+============================== 14:00:57.778403 | 2b1bde93-11bc-4c1a-b421-ffd20c4abfff ==============================
+[0m14:00:57.778403 [info ] [MainThread]: Running with dbt=1.10.9
+[0m14:00:57.778980 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\prico\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'None', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'logs', 'introspect': 'True', 'no_print': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init imobiliare_transforms', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'target_path': 'None'}
+[0m14:00:57.793810 [debug] [MainThread]: Starter project path: C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m14:00:57.803091 [info ] [MainThread]: 
+Your new dbt project "imobiliare_transforms" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:00:57.803461 [info ] [MainThread]: Setting up your profile.
+[0m14:02:06.325950 [error] [MainThread]: Encountered an error:
+
+[0m14:02:06.328885 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\click\termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m14:02:06.330192 [debug] [MainThread]: Command `dbt init` failed at 14:02:06.330057 after 68.66 seconds
+[0m14:02:06.330658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024DAADA7CE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024DAA4D2690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024DAAE68490>]}
+[0m14:02:06.331113 [debug] [MainThread]: Flushing usage events
+[0m14:02:06.876045 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:02:13.812704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001822B32FA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000182293F8190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001822C744190>]}
+
+
+============================== 14:02:13.816009 | b4e781bc-ffd7-43ef-b4a9-f8a1d3e489da ==============================
+[0m14:02:13.816009 [info ] [MainThread]: Running with dbt=1.10.9
+[0m14:02:13.816551 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'None', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\prico\\.dbt', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'logs', 'introspect': 'True', 'invocation_command': 'dbt init imobiliare_transforms', 'fail_fast': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'use_experimental_parser': 'False'}
+[0m14:02:13.830618 [debug] [MainThread]: Starter project path: C:\Users\prico\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m14:02:13.839869 [info ] [MainThread]: 
+Your new dbt project "imobiliare_transforms" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m14:02:13.840240 [info ] [MainThread]: Setting up your profile.
+[0m14:02:51.330308 [info ] [MainThread]: Profile imobiliare_transforms written to C:\Users\prico\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m14:02:51.331498 [debug] [MainThread]: Command `dbt init` succeeded at 14:02:51.331390 after 37.62 seconds
+[0m14:02:51.331810 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001822E637E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001822DD627B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001822E6F8380>]}
+[0m14:02:51.332147 [debug] [MainThread]: Flushing usage events
+[0m14:02:51.844248 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:03:54.325980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E98C773A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E98A838190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E98DB94190>]}
+
+
+============================== 14:03:54.329494 | 6efd786c-6560-4ee1-8dba-8f64287bbf55 ==============================
+[0m14:03:54.329494 [info ] [MainThread]: Running with dbt=1.10.9
+[0m14:03:54.330090 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'None', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\prico\\.dbt', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'no_print': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'use_experimental_parser': 'False'}
+[0m14:03:54.344128 [info ] [MainThread]: dbt version: 1.10.9
+[0m14:03:54.344487 [info ] [MainThread]: python version: 3.13.5
+[0m14:03:54.344814 [info ] [MainThread]: python path: C:\Users\prico\AppData\Local\Programs\Python\Python313\python.exe
+[0m14:03:54.345131 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m14:03:54.682176 [info ] [MainThread]: Using profiles dir at C:\Users\prico\.dbt
+[0m14:03:54.682619 [info ] [MainThread]: Using profiles.yml file at C:\Users\prico\.dbt\profiles.yml
+[0m14:03:54.683041 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\prico\Desktop\proiect-imobiliare\dbt_project.yml
+[0m14:03:54.683780 [info ] [MainThread]: adapter type: snowflake
+[0m14:03:54.684111 [info ] [MainThread]: adapter version: 1.10.0
+[0m14:03:54.684513 [info ] [MainThread]: Configuration:
+[0m14:03:54.684904 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m14:03:54.685269 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m14:03:54.685628 [info ] [MainThread]: Required dependencies:
+[0m14:03:54.685960 [debug] [MainThread]: Executing "git --help"
+[0m14:03:54.712271 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m14:03:54.712609 [debug] [MainThread]: STDERR: "b''"
+[0m14:03:54.712901 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m14:03:54.713227 [info ] [MainThread]: Connection:
+[0m14:03:54.713557 [info ] [MainThread]:   account: gd81903.chtcdlq
+[0m14:03:54.713863 [info ] [MainThread]:   user: anap17
+[0m14:03:54.714204 [info ] [MainThread]:   database: IMOBILIARE_RAW
+[0m14:03:54.714503 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m14:03:54.714801 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m14:03:54.715098 [info ] [MainThread]:   schema: STORIA_DATA
+[0m14:03:54.715397 [info ] [MainThread]:   authenticator: None
+[0m14:03:54.715695 [info ] [MainThread]:   oauth_client_id: None
+[0m14:03:54.716036 [info ] [MainThread]:   query_tag: None
+[0m14:03:54.716383 [info ] [MainThread]:   client_session_keep_alive: False
+[0m14:03:54.716682 [info ] [MainThread]:   host: None
+[0m14:03:54.716995 [info ] [MainThread]:   port: None
+[0m14:03:54.717304 [info ] [MainThread]:   proxy_host: None
+[0m14:03:54.717643 [info ] [MainThread]:   proxy_port: None
+[0m14:03:54.718015 [info ] [MainThread]:   protocol: None
+[0m14:03:54.718325 [info ] [MainThread]:   connect_retries: 1
+[0m14:03:54.718620 [info ] [MainThread]:   connect_timeout: None
+[0m14:03:54.718912 [info ] [MainThread]:   retry_on_database_errors: False
+[0m14:03:54.719249 [info ] [MainThread]:   retry_all: False
+[0m14:03:54.719543 [info ] [MainThread]:   insecure_mode: False
+[0m14:03:54.719835 [info ] [MainThread]:   reuse_connections: True
+[0m14:03:54.720198 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m14:03:54.720703 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m14:03:55.014647 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m14:03:55.112663 [debug] [MainThread]: Using snowflake connection "debug"
+[0m14:03:55.112928 [debug] [MainThread]: On debug: select 1 as id
+[0m14:03:55.113167 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:04:03.206313 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m14:04:03.206624 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m14:04:03.206895 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m14:04:03.207331 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m14:04:03.207735 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\prico\Desktop\proiect-imobiliare\dbt_project.yml> not found
+
+[0m14:04:03.208161 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001: Could not connect to Snowflake backend after 2 attempt(s).Aborting
+  Verify that the hostnames and port numbers in SYSTEM$ALLOWLIST are added to your firewall's allowed list.
+  To further troubleshoot your connection you may reference the following article: https://docs.snowflake.com/en/user-guide/client-connectivity-troubleshooting/overview.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m14:04:03.208971 [debug] [MainThread]: Command `dbt debug` failed at 14:04:03.208869 after 8.99 seconds
+[0m14:04:03.209240 [debug] [MainThread]: Connection 'debug' was left open.
+[0m14:04:03.209472 [debug] [MainThread]: On debug: No close available on handle
+[0m14:04:03.209727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E9903D8D60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E990130950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E98FBD1BF0>]}
+[0m14:04:03.210030 [debug] [MainThread]: Flushing usage events
+[0m14:04:03.762522 [debug] [MainThread]: An error was encountered while trying to flush usage events
