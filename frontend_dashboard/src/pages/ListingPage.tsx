@@ -3,7 +3,8 @@ import axios from 'axios';
 import Filters from '../components/Filters';
 import { useFilters } from '../contexts/FiltersContext';
 import qs from 'qs';
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+//const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = 'http://localhost:3001';
 import ClipLoader from "react-spinners/ClipLoader";
 interface Listing {
     TITLU: string;
@@ -61,13 +62,13 @@ const ListingsPage: React.FC = () => {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold text-dark-brown mb-8">Listă Detaliată Anunțuri</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-dark-brown mb-8">Listă Detaliată Anunțuri</h1>
 
 
             <Filters />
 
             <section className="bg-white rounded-lg shadow-md overflow-hidden">
-                <h2 className="text-lg font-semibold text-gray-700 p-6">Rezultate Căutare</h2>
+                <h2 className="text-lg font-semibold text-gray-700 p-6 md:p-6">Rezultate Căutare</h2>
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead className="bg-gray-100">

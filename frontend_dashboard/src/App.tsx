@@ -49,7 +49,7 @@ function App() {
     const [error, setError] = useState<string | null>(null);
     const [roomDistribution, setRoomDistribution] = useState<RoomDistribution[]>([]);
     const [sectorDistribution, setSectorDistribution] = useState<SectorDistribution[]>([]);
-    // ------------------------------------
+
 
 
     useEffect(() => {
@@ -160,12 +160,12 @@ function App() {
                     <div className="w-full lg:flex-1 bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-lg font-semibold text-gray-700 text-center mb-4">Preț Mediu / m² pe Cartier</h2>
                         <div className="h-96">
-                            <Bar data={chartData} options={{ indexAxis: 'y' as const, // <-- Această linie transformă graficul în orizontal
+                            <Bar data={chartData} options={{ indexAxis: 'y' as const,
                                 responsive: true,
                                 maintainAspectRatio: false,
                                 plugins: {
                                     legend: {
-                                        display: false // Putem ascunde legenda pentru a face mai mult loc
+                                        display: false
                                     }
                                 } }} />
                         </div>

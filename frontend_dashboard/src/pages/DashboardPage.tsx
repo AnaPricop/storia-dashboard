@@ -23,7 +23,8 @@ ChartJS.register(
     Tooltip,
     Legend
 );
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+//const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = 'http://localhost:3001';
 
 interface DistrictStat {
     DISTRICT: string;
@@ -173,15 +174,14 @@ const DashboardPage: React.FC = () => {
     return (
         <div className="bg-gray-100 min-h-screen font-sans">
             <main className="container mx-auto p-4 md:p-8">
-                <h1 className="text-3xl font-bold text-gray-800 mb-8">Dashboard Storia.ro</h1>
+                <h1 className="text-2xl md:text-3xl font-bold text-dark-brown mb-8">Dashboard Storia.ro</h1>
 
                 <KpiCards data={kpis}/>
 
                 <div className="flex flex-col gap-6 mb-8">
 
 
-                    <div className="flex flex-wrap lg:flex-nowrap gap-6">
-
+                    <div className="flex flex-col lg:flex-row gap-6">
                         <PieChartCard title="Distributie dupa nr. de camere" chartData={roomDistributionChartData}/>
 
                         <PieChartCard title="Distributie pe sectoare" chartData={sectorDistributionChartData}/>
