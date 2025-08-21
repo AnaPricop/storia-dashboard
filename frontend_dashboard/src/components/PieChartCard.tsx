@@ -14,7 +14,6 @@ interface PieChartCardProps {
             backgroundColor: string[];
             borderColor: string[];
             borderWidth: number;
-            datasets: any[];
         }[];
     };
 }
