@@ -63,9 +63,9 @@ This project provided deep insights into the practical challenges of building a 
 
 To run the entire system locally, follow the steps below.
 
-### Prerequisites
+### Prequisites
 *   Docker Desktop
-*   Node.js (via `nvm` is recommended)
+*   Node.js 
 *   Python & a virtual environment tool
 *   Active accounts on Microsoft Azure and Snowflake
 
